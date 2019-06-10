@@ -23,7 +23,6 @@ class storm::logviewer(
 ) inherits storm {
 
   concat::fragment { 'logviewer':
-    ensure  => present,
     target  => $config_file,
     content => template("${module_name}/storm_logviewer.erb"),
     order   => 4,

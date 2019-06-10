@@ -31,7 +31,6 @@ class storm::mesos(
   validate_array($jvm)
 
   concat::fragment { 'mesos':
-    ensure  => present,
     target  => $config_file,
     content => template("${module_name}/storm_mesos.erb"),
     order   => 6,
