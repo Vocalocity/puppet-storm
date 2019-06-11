@@ -36,7 +36,6 @@ class storm::ui(
   validate_array($jvm)
 
   concat::fragment { 'ui':
-    ensure  => present,
     target  => $config_file,
     content => template("${module_name}/storm_ui.erb"),
     order   => 3,

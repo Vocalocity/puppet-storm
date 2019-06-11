@@ -100,6 +100,7 @@ class storm(
   }
 
   concat { $config_file:
+    ensure  => present,
     owner   => $user,
     group   => $group,
     mode    => '0644',
@@ -107,7 +108,6 @@ class storm(
   }
 
   concat::fragment { 'core':
-    ensure  => present,
     target  => $config_file,
     content => template("${module_name}/storm_core.erb"),
     order   => 1,

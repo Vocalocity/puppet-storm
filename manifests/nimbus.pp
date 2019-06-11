@@ -39,7 +39,6 @@ class storm::nimbus(
 ) inherits storm {
 
   concat::fragment { 'nimbus':
-    ensure  => present,
     target  => $config_file,
     content => template("${module_name}/storm_nimbus.erb"),
     order   => 2,
